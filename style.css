@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    margin: 15px 0;
+}
+
+.container{
+    display: flex;
+}
+
+.container .section{
+    width: 350px;
+    margin: 20px 50px;
+}
+
+.section .info{
+    background: limegreen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+
+.info span , .info h3{
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0 15px
+}
+
+.showPlayer , .showCpu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: burlywood;
+    height: 220px;
+}
+
+.showPlayer i , .showCpu i{
+    font-size: 100px;
+    color: blueviolet;
+}
+
+h2{
+    font-weight: bold;
+    padding: 5px;
+}
+
+.selection{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height: 100px;
+}
+
+.selection button{
+    margin: 0 20px;
+    padding: 25px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 33px;
+    color: burlywood;
+}
