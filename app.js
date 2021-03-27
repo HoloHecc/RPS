@@ -1,5 +1,5 @@
-let cpuScore = 1;
-let playerScore = 1;
+let cpuScoreNum = 1;
+let playerScoreNum = 1;
 
 const cScore = document.getElementById('cpuScore');
 const pScore = document.getElementById('playerScore');
@@ -30,28 +30,28 @@ const game = () =>{
             }
 
             else if(pshowIcon.className === randomClass[0] && cshowIcon.className === randomClass[2]){
-                pScore.innerHTML = playerScore;
-                playerScore++;
+                pScore.innerHTML = playerScoreNum;
+                playerScoreNum++;
                 text.innerHTML = "Ayyyy!"
             }else if(pshowIcon.className === randomClass[0] && cshowIcon.className === randomClass[1]){
-                cScore.innerHTML = cpuScore;
-                cpuScore++;
+                cScore.innerHTML = cpuScoreNum;
+                cpuScoreNum++;
                 text.innerHTML = "Lose"
             }else if(pshowIcon.className === randomClass[1] && cshowIcon.className === randomClass[2]){
-                cScore.innerHTML = cpuScore;
-                cpuScore++;
+                cScore.innerHTML = cpuScoreNum;
+                cpuScoreNum++;
                 text.innerHTML = "Lose"
             }else if(pshowIcon.className === randomClass[1] && cshowIcon.className === randomClass[0]){
-                pScore.innerHTML = playerScore;
-                playerScore++;
+                pScore.innerHTML = playerScoreNum;
+                playerScoreNum++;
                 text.innerHTML = "Ayyyy!"
             }else if(pshowIcon.className === randomClass[2] && cshowIcon.className === randomClass[0]){
-                cScore.innerHTML = cpuScore;
-                cpuScore++;
+                cScore.innerHTML = cpuScoreNum;
+                cpuScoreNum++;
                 text.innerHTML = "Lose"
             }else if(pshowIcon.className === randomClass[2] && cshowIcon.className === randomClass[1]){
-                pScore.innerHTML = playerScore;
-                playerScore++;
+                pScore.innerHTML = playerScoreNum;
+                playerScoreNum++;
                 text.innerHTML = "Ayyyy!"
             }
         });
