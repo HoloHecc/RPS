@@ -15,31 +15,34 @@ const winCondition = document.querySelector('condition');
 const cshowIcon = document.querySelector('.showCpu i');
 const pshowIcon = document.querySelector('.showPlayer i');
 
+//event listeners 
+rockBtn.addEventListener('click', function() {
+    game('rock');
+})
+paperBtn.addEventListener('click', function() {
+    game('paper');
+})
+scissorsBtn.addEventListener('click', function() {
+    game('scissors');
+})
 
+//random cpu function
 function randomCpu() {
     const rpsClass = ["hand-rock", "hand-paper", "hand-scissors"]; 
     const randomChoice = (Math.floor(Math.random(rpsClass) * 3));
     return rpsClass [randomChoice];
 
 }
-console.log(randomCpu());
+
+
 //game start function
 function game(playerChoice){
-    console.log(playerChoice);
+    console.log('player chose' + playerChoice);
+    const cpuChoice = randomCpu();
+    console.log('cpu chose' + cpuChoice);
+
 }
-//event listeners 
-rockBtn.addEventListener('click', function() {
-    console.log('rock clicked');
-    game('chooseRock');
-})
-paperBtn.addEventListener('click', function() {
-    console.log('paper clicked');
-    game('choosePaper');
-})
-scissorsBtn.addEventListener('click', function() {
-    console.log('scissors clicked');
-    game('chooseScissors');
-})
+
 
 
 
