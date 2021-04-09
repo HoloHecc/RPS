@@ -6,7 +6,6 @@ let playerScoreNum = 0;
 //score
 const cScore = document.getElementById('cpuScore');
 const pScore = document.getElementById('playerScore');
-const scoreBoard = document.querySelector('.section');
 //buttons
 const rockBtn = document.getElementById('rock');
 const paperBtn = document.getElementById('paper');
@@ -42,106 +41,49 @@ function randomCpu() {
 };
 
 //winning function
-//adding in params to change result text
-//cause empty params has nothing to referernce
-function win(player, cpu) {
-    console.log('player win')
+function win() {
     playerScoreNum++;
     pScore.innerHTML = playerScoreNum;
     cScore.innerHTML = cpuScoreNum;
-    winCondition.innerHTML = 'player wins!'
-    
+    winCondition.innerHTML = 'player wins!';
 };
 
 //losing function
 function lose() {
-    console.log('cpu win')
     cpuScoreNum++;
     pScore.innerHTML = playerScoreNum;
     cScore.innerHTML = cpuScoreNum;
-    winCondition.innerHTML = 'player lose!'
+    winCondition.innerHTML = 'player lose!';
 };
 
 //tie function
 function tie() {
-    console.log('tie')
     pScore.innerHTML = playerScoreNum;
     cScore.innerHTML = cpuScoreNum;
-    winCondition.innerHTML = 'tie!'
+    winCondition.innerHTML = 'tie!';
 };
 
 //game start function
 function game(playerChoice){
     const cpuChoice = randomCpu();
-    console.log('player chose' + playerChoice);
-    console.log('cpu chose' + cpuChoice);
 
     switch (playerChoice + cpuChoice) {
         case 'rock' + scissorsIcon:
         case 'paper' + rockIcon:
         case 'scissors' + paperIcon:
-            //passing the params into the function
-            //referencing the switch params
-            win(playerChoice, cpuChoice);
+            win();
             break;
+    
         case 'rock' + paperIcon:
         case 'paper' + scissorsIcon:
         case 'scissors' + rockIcon:
-            lose(playerChoice, cpuChoice);
+            lose();
             break;
+
         case 'rock' + rockIcon:
         case 'paper' + paperIcon:
         case 'scissors' + scissorsIcon:
-            tie(playerChoice, cpuChoice);
+            tie();
             break;
     }
-
-}
-
-
-
-
-// const game = () =>{
-//     buttons.forEach (btn =>{
-//         btn.addEventListener('click', (e) => {
-//             let clickedBtn = e.target.className;
-//             pshowIcon.className = clickedBtn;
-//             let randomNum = Math.floor(Math.random() * randomClass.length);
-//             cshowIcon.className = randomClass[randomNum];
-
-//             if(pshowIcon.className === cshowIcon.className){
-//                 pScore.innerHTML = pScore.innerHTML;
-//                 cScore.innerHTML = cScore.innerHTML;
-//                 winCondition.innerHTML = "Tie!";
-//             }
-
-//             else if(pshowIcon.className === randomClass[0] && cshowIcon.className === randomClass[2]){
-//                 pScore.innerHTML = playerScoreNum;
-//                 playerScoreNum++;
-//                 winCondition.innerHTML = "Ayyyy!"
-//             }else if(pshowIcon.className === randomClass[0] && cshowIcon.className === randomClass[1]){
-//                 cScore.innerHTML = cpuScoreNum;
-//                 cpuScoreNum++;
-//                 winCondition.innerHTML = "Lose"
-//             }else if(pshowIcon.className === randomClass[1] && cshowIcon.className === randomClass[2]){
-//                 cScore.innerHTML = cpuScoreNum;
-//                 cpuScoreNum++;
-//                 winCondition.innerHTML = "Lose"
-//             }else if(pshowIcon.className === randomClass[1] && cshowIcon.className === randomClass[0]){
-//                 pScore.innerHTML = playerScoreNum;
-//                 playerScoreNum++;
-//                 winCondition.innerHTML = "Ayyyy!"
-//             }else if(pshowIcon.className === randomClass[2] && cshowIcon.className === randomClass[0]){
-//                 cScore.innerHTML = cpuScoreNum;
-//                 cpuScoreNum++;
-//                 winCondition.innerHTML = "Lose"
-//             }else if(pshowIcon.className === randomClass[2] && cshowIcon.className === randomClass[1]){
-//                 pScore.innerHTML = playerScoreNum;
-//                 playerScoreNum++;
-//                 winCondition.innerHTML = "Ayyyy!"
-//             }
-//         });
-//     });
-// }
-
-// game();
+};
