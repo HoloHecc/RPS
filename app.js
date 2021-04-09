@@ -16,19 +16,32 @@ const cshowIcon = document.querySelector('.showCpu i');
 const pshowIcon = document.querySelector('.showPlayer i');
 
 
-const randomClass = ["hand-rock", "hand-paper", "hand-scissors"];
+function randomCpu() {
+    const rpsClass = ["hand-rock", "hand-paper", "hand-scissors"]; 
+    const randomChoice = (Math.floor(Math.random(rpsClass) * 3));
+    return rpsClass [randomChoice];
 
-
+}
+console.log(randomCpu());
+//game start function
+function game(playerChoice){
+    console.log(playerChoice);
+}
 //event listeners 
 rockBtn.addEventListener('click', function() {
     console.log('rock clicked');
+    game('chooseRock');
 })
 paperBtn.addEventListener('click', function() {
     console.log('paper clicked');
+    game('choosePaper');
 })
 scissorsBtn.addEventListener('click', function() {
     console.log('scissors clicked');
+    game('chooseScissors');
 })
+
+
 
 // const game = () =>{
 //     buttons.forEach (btn =>{
