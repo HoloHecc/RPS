@@ -12,9 +12,9 @@ const rockBtn = document.getElementById('rock');
 const paperBtn = document.getElementById('paper');
 const scissorsBtn = document.getElementById('scissors');
 //icons
-const rockIcon = '<img src="hand-rock.png" style="width:175px; height:100px;">'
-const paperIcon = '<img src="hand-paper.png" style="width:175px; height:100px;">'
-const scissorsIcon = '<img src="hand-scissors.png" style="width:175px; height:100px;">'
+const rockIcon = '<img src="hand-rock.png" style="width:310px; height:210px;">'
+const paperIcon = '<img src="hand-paper.png" style="width:310px; height:210px;">'
+const scissorsIcon = '<img src="hand-scissors.png" style="width:310px; height:210px;">'
 //results
 const winCondition = document.querySelector('condition');
 
@@ -35,7 +35,7 @@ scissorsBtn.addEventListener('click', function() {
 
 //random cpu function
 function randomCpu() {
-    const cpuChoice = ["rock", "paper", "scissors"]; 
+    const cpuChoice = [rockIcon, paperIcon, scissorsIcon]; 
     const randomChoice = (Math.floor(Math.random(cpuChoice) * 3));
     document.querySelector('.cpuChoiceIcon').innerHTML = cpuChoice [randomChoice]
     return cpuChoice [randomChoice];
