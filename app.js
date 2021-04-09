@@ -12,9 +12,9 @@ const rockBtn = document.getElementById('rock');
 const paperBtn = document.getElementById('paper');
 const scissorsBtn = document.getElementById('scissors');
 //icons
-const rockIcon = document.createElement('hand-rock');
-// const paperIcon = document.getElementById()
-// const scissorsIcon = document.getElementById()
+const rockIcon = '<img src="hand-rock.png" style="width:175px; height:100px;">'
+const paperIcon = '<img src="hand-paper.png" style="width:175px; height:100px;">'
+const scissorsIcon = '<img src="hand-scissors.png" style="width:175px; height:100px;">'
 //results
 const winCondition = document.querySelector('condition');
 
@@ -26,21 +26,19 @@ rockBtn.addEventListener('click', function() {
 });
 paperBtn.addEventListener('click', function() {
     game('paper');
-    document.querySelector('.playerChoiceIcon').innerHTML = 
-    '<img class="hand-paper" src="hand-paper.png" style="width:175px; height:100px;">'
+    document.querySelector('.playerChoiceIcon').innerHTML = paperIcon
 });
 scissorsBtn.addEventListener('click', function() {
     game('scissors');
-    document.querySelector('.playerChoiceIcon').innerHTML = 
-    '<img class="hand-scissors" src="hand-scissors.png" style="width:175px; height:100px;">'
+    document.querySelector('.playerChoiceIcon').innerHTML = scissorsIcon
 });
 
 //random cpu function
 function randomCpu() {
-    const rpsClass = ["hand-rock", "hand-paper", "hand-scissors"]; 
-    const randomChoice = (Math.floor(Math.random(rpsClass) * 3));
-    document.querySelector('.cpuChoiceIcon').innerHTML = rpsClass [randomChoice]
-    return rpsClass [randomChoice];
+    const cpuChoice = ["rock", "paper", "scissors"]; 
+    const randomChoice = (Math.floor(Math.random(cpuChoice) * 3));
+    document.querySelector('.cpuChoiceIcon').innerHTML = cpuChoice [randomChoice]
+    return cpuChoice [randomChoice];
 };
 
 
