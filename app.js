@@ -48,6 +48,24 @@ function game(playerChoice){
     console.log('player chose' + playerChoice);
     console.log('cpu chose' + cpuChoice);
 
+    switch (playerChoice + cpuChoice) {
+        case 'rock' + scissorsIcon:
+        case 'paper' + rockIcon:
+        case 'scissors' + paperIcon:
+            console.log('player win');
+            break;
+        case 'rock' + paperIcon:
+        case 'paper' + scissorsIcon:
+        case 'scissors' + rockIcon:
+            console.log('cpu win');
+            break;
+        case 'rock' + rockIcon:
+        case 'paper' + paperIcon:
+        case 'scissors' + scissorsIcon:
+            console.log('tie');
+            break;
+    }
+
 }
 
 
