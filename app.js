@@ -11,11 +11,12 @@ const paperBtn = document.getElementById('paper');
 const scissorsBtn = document.getElementById('scissors');
 const winCondition = document.querySelector('condition');
 //figure out how to make icon i tag change the img tag
+
 //to show the icon
 const cshowIcon = document.querySelector('.showCpu i');
 const pshowIcon = document.querySelector('.showPlayer i');
 
-//event listeners 
+//event listeners for buttons
 rockBtn.addEventListener('click', function() {
     game('rock');
 })
