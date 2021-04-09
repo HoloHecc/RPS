@@ -1,19 +1,24 @@
-let cpuScoreNum = 1;
-let playerScoreNum = 1;
+//scores
+let cpuScoreNum = 0;
+let playerScoreNum = 0;
 
+//DOM variables
 const cScore = document.getElementById('cpuScore');
 const pScore = document.getElementById('playerScore');
-const buttons = document.querySelectorAll('.selection button');
+const scoreBoard = document.querySelector('.section');
+const rockBtn = document.getElementById('rock');
+const paperBtn = document.getElementById('paper');
+const scissorsBtn = document.getElementById('scissors');
+const winCondition = document.querySelector('condition');
+//figure out how to make icon i tag change the img tag
+//to show the icon
 const cshowIcon = document.querySelector('.showCpu i');
 const pshowIcon = document.querySelector('.showPlayer i');
 
-const randomClass = ["hand-rock", "hand-paper", "hand-scissors"];
-const text = document.getElementById('condition');
 
-// const path = require('path');
-// const paper_icon = fs.readFileSync(path.join(__dirname, 'hand-paper.png'));
-// const rock_icon = fs.readFileSync(path.join(__dirname, 'hand-rock.png'));
-// const scissors_icon = fs.readFileSync(path.join(__dirname, 'hand-scissors.png'));
+const randomClass = ["hand-rock", "hand-paper", "hand-scissors"];
+
+
 
 const game = () =>{
     buttons.forEach (btn =>{
@@ -26,33 +31,33 @@ const game = () =>{
             if(pshowIcon.className === cshowIcon.className){
                 pScore.innerHTML = pScore.innerHTML;
                 cScore.innerHTML = cScore.innerHTML;
-                text.innerHTML = "Tie!";
+                winCondition.innerHTML = "Tie!";
             }
 
             else if(pshowIcon.className === randomClass[0] && cshowIcon.className === randomClass[2]){
                 pScore.innerHTML = playerScoreNum;
                 playerScoreNum++;
-                text.innerHTML = "Ayyyy!"
+                winCondition.innerHTML = "Ayyyy!"
             }else if(pshowIcon.className === randomClass[0] && cshowIcon.className === randomClass[1]){
                 cScore.innerHTML = cpuScoreNum;
                 cpuScoreNum++;
-                text.innerHTML = "Lose"
+                winCondition.innerHTML = "Lose"
             }else if(pshowIcon.className === randomClass[1] && cshowIcon.className === randomClass[2]){
                 cScore.innerHTML = cpuScoreNum;
                 cpuScoreNum++;
-                text.innerHTML = "Lose"
+                winCondition.innerHTML = "Lose"
             }else if(pshowIcon.className === randomClass[1] && cshowIcon.className === randomClass[0]){
                 pScore.innerHTML = playerScoreNum;
                 playerScoreNum++;
-                text.innerHTML = "Ayyyy!"
+                winCondition.innerHTML = "Ayyyy!"
             }else if(pshowIcon.className === randomClass[2] && cshowIcon.className === randomClass[0]){
                 cScore.innerHTML = cpuScoreNum;
                 cpuScoreNum++;
-                text.innerHTML = "Lose"
+                winCondition.innerHTML = "Lose"
             }else if(pshowIcon.className === randomClass[2] && cshowIcon.className === randomClass[1]){
                 pScore.innerHTML = playerScoreNum;
                 playerScoreNum++;
-                text.innerHTML = "Ayyyy!"
+                winCondition.innerHTML = "Ayyyy!"
             }
         });
     });
