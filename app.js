@@ -1,45 +1,53 @@
-//scores
+//scores numbers
 let cpuScoreNum = 0;
 let playerScoreNum = 0;
 
 //DOM variables
+//score
 const cScore = document.getElementById('cpuScore');
 const pScore = document.getElementById('playerScore');
 const scoreBoard = document.querySelector('.section');
+//buttons
 const rockBtn = document.getElementById('rock');
 const paperBtn = document.getElementById('paper');
 const scissorsBtn = document.getElementById('scissors');
+//icons
+const rockIcon = document.createElement('hand-rock');
+// const paperIcon = document.getElementById()
+// const scissorsIcon = document.getElementById()
+//results
 const winCondition = document.querySelector('condition');
-//figure out how to make icon i tag change the img tag
 
-//to show the icon
-const cshowIcon = document.querySelector('.showCpu i');
-const pshowIcon = document.querySelector('.showPlayer i');
 
 //event listeners for buttons
 rockBtn.addEventListener('click', function() {
-    game('rock');
-})
+    game('rock')
+    document.querySelector('.playerChoiceIcon').innerHTML = rockIcon
+});
 paperBtn.addEventListener('click', function() {
     game('paper');
-})
+    document.querySelector('.playerChoiceIcon').innerHTML = 
+    '<img class="hand-paper" src="hand-paper.png" style="width:175px; height:100px;">'
+});
 scissorsBtn.addEventListener('click', function() {
     game('scissors');
-})
+    document.querySelector('.playerChoiceIcon').innerHTML = 
+    '<img class="hand-scissors" src="hand-scissors.png" style="width:175px; height:100px;">'
+});
 
 //random cpu function
 function randomCpu() {
     const rpsClass = ["hand-rock", "hand-paper", "hand-scissors"]; 
     const randomChoice = (Math.floor(Math.random(rpsClass) * 3));
+    document.querySelector('.cpuChoiceIcon').innerHTML = rpsClass [randomChoice]
     return rpsClass [randomChoice];
-
-}
+};
 
 
 //game start function
 function game(playerChoice){
-    console.log('player chose' + playerChoice);
     const cpuChoice = randomCpu();
+    console.log('player chose' + playerChoice);
     console.log('cpu chose' + cpuChoice);
 
 }
