@@ -19,48 +19,58 @@ const pshowIcon = document.querySelector('.showPlayer i');
 const randomClass = ["hand-rock", "hand-paper", "hand-scissors"];
 
 
+//event listeners 
+rockBtn.addEventListener('click', function() {
+    console.log('rock clicked');
+})
+paperBtn.addEventListener('click', function() {
+    console.log('paper clicked');
+})
+scissorsBtn.addEventListener('click', function() {
+    console.log('scissors clicked');
+})
 
-const game = () =>{
-    buttons.forEach (btn =>{
-        btn.addEventListener('click', (e) => {
-            let clickedBtn = e.target.className;
-            pshowIcon.className = clickedBtn;
-            let randomNum = Math.floor(Math.random() * randomClass.length);
-            cshowIcon.className = randomClass[randomNum];
+// const game = () =>{
+//     buttons.forEach (btn =>{
+//         btn.addEventListener('click', (e) => {
+//             let clickedBtn = e.target.className;
+//             pshowIcon.className = clickedBtn;
+//             let randomNum = Math.floor(Math.random() * randomClass.length);
+//             cshowIcon.className = randomClass[randomNum];
 
-            if(pshowIcon.className === cshowIcon.className){
-                pScore.innerHTML = pScore.innerHTML;
-                cScore.innerHTML = cScore.innerHTML;
-                winCondition.innerHTML = "Tie!";
-            }
+//             if(pshowIcon.className === cshowIcon.className){
+//                 pScore.innerHTML = pScore.innerHTML;
+//                 cScore.innerHTML = cScore.innerHTML;
+//                 winCondition.innerHTML = "Tie!";
+//             }
 
-            else if(pshowIcon.className === randomClass[0] && cshowIcon.className === randomClass[2]){
-                pScore.innerHTML = playerScoreNum;
-                playerScoreNum++;
-                winCondition.innerHTML = "Ayyyy!"
-            }else if(pshowIcon.className === randomClass[0] && cshowIcon.className === randomClass[1]){
-                cScore.innerHTML = cpuScoreNum;
-                cpuScoreNum++;
-                winCondition.innerHTML = "Lose"
-            }else if(pshowIcon.className === randomClass[1] && cshowIcon.className === randomClass[2]){
-                cScore.innerHTML = cpuScoreNum;
-                cpuScoreNum++;
-                winCondition.innerHTML = "Lose"
-            }else if(pshowIcon.className === randomClass[1] && cshowIcon.className === randomClass[0]){
-                pScore.innerHTML = playerScoreNum;
-                playerScoreNum++;
-                winCondition.innerHTML = "Ayyyy!"
-            }else if(pshowIcon.className === randomClass[2] && cshowIcon.className === randomClass[0]){
-                cScore.innerHTML = cpuScoreNum;
-                cpuScoreNum++;
-                winCondition.innerHTML = "Lose"
-            }else if(pshowIcon.className === randomClass[2] && cshowIcon.className === randomClass[1]){
-                pScore.innerHTML = playerScoreNum;
-                playerScoreNum++;
-                winCondition.innerHTML = "Ayyyy!"
-            }
-        });
-    });
-}
+//             else if(pshowIcon.className === randomClass[0] && cshowIcon.className === randomClass[2]){
+//                 pScore.innerHTML = playerScoreNum;
+//                 playerScoreNum++;
+//                 winCondition.innerHTML = "Ayyyy!"
+//             }else if(pshowIcon.className === randomClass[0] && cshowIcon.className === randomClass[1]){
+//                 cScore.innerHTML = cpuScoreNum;
+//                 cpuScoreNum++;
+//                 winCondition.innerHTML = "Lose"
+//             }else if(pshowIcon.className === randomClass[1] && cshowIcon.className === randomClass[2]){
+//                 cScore.innerHTML = cpuScoreNum;
+//                 cpuScoreNum++;
+//                 winCondition.innerHTML = "Lose"
+//             }else if(pshowIcon.className === randomClass[1] && cshowIcon.className === randomClass[0]){
+//                 pScore.innerHTML = playerScoreNum;
+//                 playerScoreNum++;
+//                 winCondition.innerHTML = "Ayyyy!"
+//             }else if(pshowIcon.className === randomClass[2] && cshowIcon.className === randomClass[0]){
+//                 cScore.innerHTML = cpuScoreNum;
+//                 cpuScoreNum++;
+//                 winCondition.innerHTML = "Lose"
+//             }else if(pshowIcon.className === randomClass[2] && cshowIcon.className === randomClass[1]){
+//                 pScore.innerHTML = playerScoreNum;
+//                 playerScoreNum++;
+//                 winCondition.innerHTML = "Ayyyy!"
+//             }
+//         });
+//     });
+// }
 
-game();
+// game();
