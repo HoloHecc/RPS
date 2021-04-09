@@ -12,11 +12,11 @@ const rockBtn = document.getElementById('rock');
 const paperBtn = document.getElementById('paper');
 const scissorsBtn = document.getElementById('scissors');
 //icons
-const rockIcon = '<img src="hand-rock.png" style="width:310px; height:210px;">'
-const paperIcon = '<img src="hand-paper.png" style="width:310px; height:210px;">'
-const scissorsIcon = '<img src="hand-scissors.png" style="width:310px; height:210px;">'
+const rockIcon = '<img src="hand-rock.png" style="width:310px; height:210px;">';
+const paperIcon = '<img src="hand-paper.png" style="width:310px; height:210px;">';
+const scissorsIcon = '<img src="hand-scissors.png" style="width:310px; height:210px;">';
 //results
-const winCondition = document.querySelector('condition');
+const winCondition = document.querySelector('.condition');
 
 
 //event listeners for buttons
@@ -41,6 +41,34 @@ function randomCpu() {
     return cpuChoice [randomChoice];
 };
 
+//winning function
+//adding in params to change result text
+//cause empty params has nothing to referernce
+function win(player, cpu) {
+    console.log('player win')
+    playerScoreNum++;
+    pScore.innerHTML = playerScoreNum;
+    cScore.innerHTML = cpuScoreNum;
+    winCondition.innerHTML = 'player wins!'
+    
+};
+
+//losing function
+function lose() {
+    console.log('cpu win')
+    cpuScoreNum++;
+    pScore.innerHTML = playerScoreNum;
+    cScore.innerHTML = cpuScoreNum;
+    winCondition.innerHTML = 'player lose!'
+};
+
+//tie function
+function tie() {
+    console.log('tie')
+    pScore.innerHTML = playerScoreNum;
+    cScore.innerHTML = cpuScoreNum;
+    winCondition.innerHTML = 'tie!'
+};
 
 //game start function
 function game(playerChoice){
@@ -52,17 +80,19 @@ function game(playerChoice){
         case 'rock' + scissorsIcon:
         case 'paper' + rockIcon:
         case 'scissors' + paperIcon:
-            console.log('player win');
+            //passing the params into the function
+            //referencing the switch params
+            win(playerChoice, cpuChoice);
             break;
         case 'rock' + paperIcon:
         case 'paper' + scissorsIcon:
         case 'scissors' + rockIcon:
-            console.log('cpu win');
+            lose(playerChoice, cpuChoice);
             break;
         case 'rock' + rockIcon:
         case 'paper' + paperIcon:
         case 'scissors' + scissorsIcon:
-            console.log('tie');
+            tie(playerChoice, cpuChoice);
             break;
     }
 
